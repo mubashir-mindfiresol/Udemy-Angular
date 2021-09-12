@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { AuthModule } from '../auth/auth.module';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    AuthModule,
+  ],
+  providers: [AuthService]
 })
 export class CoreModule { }
